@@ -4,7 +4,7 @@ const BookingForm = (props) => {
   const [date, setDate] = useState("");
   const [times, setTimes] = useState("");
   const [guests, setGuests] = useState("");
-  const [occasion, setOccasion] = useState("")
+  const [occasion, setOccasion] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,14 +14,14 @@ const BookingForm = (props) => {
   const handleChange = (e) => {
     setDate(e);
     props.dispatch(e);
-  }
+  };
   return (
     <header>
       <section>
         <form onSubmit={handleSubmit}>
           <fieldset>
             <div>
-              <label htmlFor="book-date">Choose Date</label>
+              <label htmlFor="book-date">Choose Date:</label>
               <input
                 id="book-date"
                 value={date}
@@ -37,6 +37,7 @@ const BookingForm = (props) => {
                 id="book-time"
                 value={times}
                 onChange={(e) => setTimes(e.target.value)}
+                required
               >
                 <option value="">Select a Time</option>
                 {props.availableTimes.availableTimes.map((availableTimes) => {
@@ -49,7 +50,9 @@ const BookingForm = (props) => {
               <label htmlFor="book-guests">Number of Guests:</label>
               <input
                 id="book-guests"
+                type="number"
                 min="1"
+                required
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
               />
@@ -68,14 +71,18 @@ const BookingForm = (props) => {
               </select>
             </div>
             {/* Submit Button */}
-            <div className='btnReceive'>
-                <input aria-label="On Click" type='submit' value={"Make Your Reservation"}/>
+            <div className="btnReceive">
+              <input
+                aria-label="On Click"
+                type="submit"
+                value={"Make Your Reservation"}
+              />
             </div>
           </fieldset>
         </form>
       </section>
     </header>
   );
-}
+};
 
 export default BookingForm;

@@ -10,8 +10,9 @@ const Header = () => {
           <h2>Little Lemon</h2>
           <h3>Salt Lake City</h3>
           <p>
-            We are a family owned Mediterranean restaurant, focused on
-            traditional recipes served with a modern twist.
+          As a family-owned Mediterranean 
+          restaurant, we specialize in blending 
+          traditional recipes with a modern twist.
           </p>
           <Link to="/booking">
             <button aria-label="On Click">Reserve Table</button>
